@@ -1,16 +1,14 @@
-version: '3.8'
-
 services:
   mc-server:
     build: .
     container_name: minecraft-server-1.20.1
     ports:
-      - "25565:25565"
+      - "25566:25565"
     volumes:
       - ./data:/minecraft/data
     environment:
       - MEM_MIN=2G
-      - MEM_MAX=2G
+      - MEM_MAX=8G
     tty: true
     stdin_open: true
     restart: unless-stopped
